@@ -28,14 +28,14 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Telefon",
-      value: "+46 70 123 45 67",
+      value: "070 123 45 67",
       href: "tel:+46701234567"
     },
     {
       icon: Mail,
       title: "E-post",
-      value: "info@jn-entreprenad.se",
-      href: "mailto:info@jn-entreprenad.se"
+      value: "info@jnmarkentreprenad.se",
+      href: "mailto:info@jnmarkentreprenad.se"
     }
   ];
 
