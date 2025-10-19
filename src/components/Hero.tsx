@@ -18,7 +18,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
           JN Markentreprenad AB
         </h1>
         <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
@@ -46,7 +46,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center pt-2">
           <div className="w-1 h-3 bg-primary-foreground/50 rounded-full" />
         </div>
