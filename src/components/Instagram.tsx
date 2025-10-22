@@ -1,4 +1,4 @@
-
+import Instafeed from 'instafeed.js';
 
 const Instagram = () => {
   return (
