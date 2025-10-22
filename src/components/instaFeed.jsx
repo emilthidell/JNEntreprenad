@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
+// Simple, copy-paste-safe version using .then() (avoids any async/await parser quirks)
 export default function InstagramFeed({
   endpoint = 'http://localhost:5174/api/ig-media',
-  columns = 3
+  columns = 3,
 }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,22 +12,21 @@ export default function InstagramFeed({
   useEffect(() => {
     let alive = true;
 
-    async function load() {
-      try {
-        const res = await fetch(endpoint);
+    fetch(endpoint)
+      .then((res) => {
         if (!res.ok) throw new Error('Failed to load Instagram feed');
-        const data = await res.json();
-        if (alive) setItems(data);
-      } catch (e) {
+        return res.json();
+      })
+      .then((data) => {
+        if (alive) setItems(Array.isArray(data) ? data : []);
+      })
+      .catch((e) => {
         if (alive) setError(e.message);
-      } finally {
+      })
+      .finally(() => {
         if (alive) setLoading(false);
-      }
-    }
+      });
 
-    load();
-
-    // ✅ fixed — properly close useEffect function and dependency array
     return () => {
       alive = false;
     };
@@ -39,7 +39,7 @@ export default function InstagramFeed({
   const gridTemplate = {
     display: 'grid',
     gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-    gap: '12px'
+    gap: '12px',
   };
 
   return (
@@ -55,7 +55,7 @@ export default function InstagramFeed({
               display: 'block',
               borderRadius: 12,
               overflow: 'hidden',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
             }}
             aria-label={m.caption || 'Instagram post'}
           >
@@ -70,7 +70,7 @@ export default function InstagramFeed({
                   width: '100%',
                   height: '100%',
                   display: 'block',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
                 }}
               />
             ) : (
@@ -82,7 +82,7 @@ export default function InstagramFeed({
                   width: '100%',
                   height: '100%',
                   display: 'block',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
                 }}
               />
             )}
