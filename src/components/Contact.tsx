@@ -28,14 +28,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Telefon",
-      value: "070 123 45 67",
-      href: "tel:+46701234567"
+      namn: "Jesper Renblad Stavenheim",
+      telefon: "073 399 19 19",
+      telefonhref: "tel:+46733991919",
+      mail: "jesper@jnmarkentreprenad.se"
     },
     {
-      icon: Mail,
-      title: "E-post",
-      value: "info@jnmarkentreprenad.se",
-      href: "mailto:info@jnmarkentreprenad.se"
+      icon: Phone,
+      title: "Telefon",
+      namn: "Niklas Brobeck",
+      telefon: "070 263 80 59",
+      telefonhref: "tel:+46702638059",
+      mail: "niklas@jnmarkentreprenad.se"
     }
   ];
 
@@ -67,16 +71,26 @@ const Contact = () => {
                     <info.icon className="w-12 h-12 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
-                    {info.href !== "#" ? (
+                    <h3 className="font-semibold text-foreground mb-1">{info.namn}</h3>
+                    {info.telefonhref !== "#" ? (
                       <a 
-                        href={info.href}
+                        href={info.telefonhref}
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
-                        {info.value}
+                        {info.telefon}
                       </a>
                     ) : (
-                      <p className="text-muted-foreground">{info.value}</p>
+                      <p className="text-muted-foreground">{info.telefon}</p>
+                    )}
+                    {info.mail !== "#" ? (
+                      <a 
+                        href={info.mail}
+                        className="text-muted-foreground hover:text-accent transition-colors"
+                      >
+                        {info.mail}
+                      </a>
+                    ) : (
+                      <p className="text-muted-foreground">{info.mail}</p>
                     )}
                   </div>
                 </CardContent>

@@ -24,7 +24,7 @@ const Services = () => {
       image: stoneworkImage,
       features: [
         "Stenläggning & plattsättning",
-        "Naturstensmurar",
+        "Murar",
         "Trappor & entréer",
         "Trädgårdsdesign"
       ]
