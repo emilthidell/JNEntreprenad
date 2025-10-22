@@ -7,7 +7,14 @@ const Instagram = () => {
         <p className="text-sm">
           Instagram Feed
         </p>
-         
+         <div id="instafeed"></div>
+
+          <script type="text/javascript">
+            var feed = new Instafeed({
+              accessToken: "your-token",
+            });
+            feed.run();
+          </script>
       </div>
     </footer>
   );
