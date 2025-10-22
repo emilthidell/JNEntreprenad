@@ -1,4 +1,4 @@
-import InstagramFeed from '@/components/InstaFeed.jsx';
+import InstaFeed from '@/components/InstaFeed.jsx';
 
 const Instagram = () => {
   return (
