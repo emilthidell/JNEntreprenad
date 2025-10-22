@@ -1,3 +1,5 @@
+import InstagramFeed  from './instagram-embedd'
+//import './instagram-embedd/dist/index.css'
 const Instagram = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-8">
