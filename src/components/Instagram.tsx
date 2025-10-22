@@ -1,4 +1,8 @@
+// import module
+import { instagramdl } from '@bochilteam/scraper-instagram'
 
+const data = await instagramdl('https://www.instagram.com/emilthidellvannoort/')
+console.log(data) // JSON
 
 const Instagram = () => {
   return (
