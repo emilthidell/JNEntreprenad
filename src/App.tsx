@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import InstagramFeed  from './instagram-embedd'
-import './instagram-embedd/dist/index.css'
+//import './instagram-embedd/dist/index.css'
 
 const queryClient = new QueryClient();
 
