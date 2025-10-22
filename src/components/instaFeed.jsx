@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 
-export default function InstagramFeed({ endpoint = 'http://localhost:5174/api/ig-media', columns = 3 }) {
+export default function InstagramFeed({
+  endpoint = 'http://localhost:5174/api/ig-media',
+  columns = 3
+}) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     let alive = true;
+
     async function load() {
       try {
         const res = await fetch(endpoint);
@@ -19,8 +23,13 @@ export default function InstagramFeed({ endpoint = 'http://localhost:5174/api/ig
         if (alive) setLoading(false);
       }
     }
+
     load();
-    return () => { alive = false; };
+
+    // ✅ fixed — properly close useEffect function and dependency array
+    return () => {
+      alive = false;
+    };
   }, [endpoint]);
 
   if (loading) return <p>Loading Instagram…</p>;
@@ -57,14 +66,24 @@ export default function InstagramFeed({ endpoint = 'http://localhost:5174/api/ig
                 preload="metadata"
                 muted
                 playsInline
-                style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'block',
+                  objectFit: 'cover'
+                }}
               />
             ) : (
               <img
                 src={m.media_url}
                 alt={m.caption || 'Instagram image'}
                 loading="lazy"
-                style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover' }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'block',
+                  objectFit: 'cover'
+                }}
               />
             )}
           </a>
