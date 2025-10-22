@@ -29,7 +29,7 @@ const Contact = () => {
       icon: Phone,
       title: "Telefon",
       namn: "Jesper Renblad Stavenheim",
-      telefon: "073 399 19 19",
+      telefon: "0733991919",
       telefonhref: "tel:+46733991919",
       mail: "jesper@jnmarkentreprenad.se"
     },
@@ -37,7 +37,7 @@ const Contact = () => {
       icon: Phone,
       title: "Telefon",
       namn: "Niklas Brobeck",
-      telefon: "070 263 80 59",
+      telefon: "0702638059",
       telefonhref: "tel:+46702638059",
       mail: "niklas@jnmarkentreprenad.se"
     }
