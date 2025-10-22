@@ -82,8 +82,9 @@ const Contact = () => {
                     ) : (
                       <p className="text-muted-foreground">{info.telefon}</p>
                     )}
+                    <br />
                     {info.mail !== "#" ? (
-                      <hr><a 
+                      <a 
                         href={info.mail}
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
