@@ -1,5 +1,5 @@
 import React from 'react'
-import InstagramFeed  from 'react-instagram-nb'
+import InstagramFeed  from 'react-instagram-nb-main'
 import 'react-instagram-nb/dist/index.css'
 
 const Instagram = () => {
