@@ -1,4 +1,6 @@
-import { InstagramEmbed } from 'react-social-media-embed';
+import React from 'react'
+import InstagramFeed  from 'react-instagram-nb'
+import 'react-instagram-nb/dist/index.css'
 
 const Instagram = () => {
   return (
@@ -7,7 +9,7 @@ const Instagram = () => {
         <p className="text-sm">
           Instagram Feed
         </p>
-        <InstagramEmbed url="https://www.instagram.com/p/CUbHfhpswxt/" />
+        <InstagramFeed token="your_access_token"  counter="6"/>  
       </div>
     </footer>
   );
