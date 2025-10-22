@@ -1,7 +1,3 @@
-import React from 'react'
-import InstagramFeed  from 'react-instagram-nb-main'
-import 'react-instagram-nb/dist/index.css'
-
 const Instagram = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-8">
